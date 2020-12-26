@@ -1,0 +1,38 @@
+#include <iostream>
+
+using namespace std;
+
+
+void swap( int *var1, int *var2 ){
+  int temp = *var1;
+    *var1=*var2;
+    *var2=temp;
+}
+
+int bubblesort(int a[],int n){
+    int i,j;
+    for(i=0;i<n-1;i++)
+        for(j=0;j=n-i-1;j++)
+            if(a[j]>a[j+1])
+            swap(&a[j],&a[j+1]);
+        }
+        
+void display(int a[],int size)
+{
+    int i;
+    for(i=0;i<size;i++)
+    cout<<a[i]<<"\t";
+    cout<<endl;
+    
+}
+int main()
+{
+    int a[]={1,2,3,4,5,6,7,8,9};
+    int size=sizeof(a)/sizeof(a[0]);
+    display(a,size);
+    bubblesort(a,size);
+    cout<<"After bubble sort: \n";
+    display(a, size);//Calling display function to print sorted array.
+    return 0;
+ 
+}
